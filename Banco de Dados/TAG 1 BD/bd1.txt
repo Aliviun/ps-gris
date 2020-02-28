@@ -1,0 +1,23 @@
+----------------------------------------Relatório do banco de dados do Processo Seletivo GRIS/2020----------------------------------------
+
+NOME: LEONARDO ANDRADE
+
+	No banco de dados criado, fiz uso de quatro entidades que julguei essenciais: "candidatos","ouvintes","palestrantes" e "tag". A seguir, segue minha explicação do porquê inseri estas entidades.
+	
+	A entidade "candidatos" é fundamental para o controle e reconhecimento daqueles que estão no processo seletivo. Com essa tabela podemos identificar o perfil daqueles que querem entrar no GRIS. Para tanto, separei o atributo "dre" como chave primária, como só pode ser candidato aqueles que são alunos da UFRJ, então todo candidato deverá ter um DRE, e este por sua vez é único e intransferível. Além desse atributo, separei também "nome"(identificacao),"email"(contato),"curso"(verificar ate onde o GRIS atinge),"area_favorita" e "presenca"(os dois últimos para verificar o interesse do candidato).
+	
+	A entidade "ouvintes" foi pensada para se ter o controle também dos que apenas estão interessados no treinamento do GRIS. É possível ter uma ideia de até onde a divulgação do processo alcança e pode alcançar. Nessa tabela temos as colunas "nome"(identificação),"identificacao CPF/DRE"(identificação única,chave primária), "vinculo_ufrj" e "como_conheceuGRIS" (verificar o alcance da divulgação do processo), "curso"(opcional, também para verificação) e "email"(contato).
+	
+	A entidade "palestrantes" servirá se ter o perfil daqueles que lecionarão os GETs. Temos nessa tabelas as colunas "nome", "descricao"(onde trabalha, posição profissional), "formacao"(curso), "gris_desde" (ano de ingresso no GRIS) e "situacao_gris", todas esses atributos são os que julguei relevantes para construção do perfil do palestrante. Além desses, temos "id_get" (nossa chave primária de identificação do get/palestra). Veremos que "id_get" será a referência para uma chave estrangeira na próxima coluna.
+
+	A entidade "tag" será útil para manter o controle das atividades passadas pelos avaliadores/palestrantes. Pensei em acrescentar um tabela "avaliacao" mas não consegui construir bem a ideia e depois relacionar ela com as demais. Quanto a nossa tabela "tag", ela possui alguns atributos interessantes, como "assunto","descricao" e "data_entrega", esses três serão úteis para termos o perfil da TAG e seu prazo de entrega. A "id_tag" é uma chave primária para identificação individual das TAGs. Por fim, temos a nossa chave estrangeira "get_avaliador". Essa chave estrangeira está referenciada no "palestrantes.id_get". Com essa chave estrangeira, podemos relacionar "tag" com "palestrantes", e assim puxar o perfil do avaliador (como nome, contato, vínculo com o GRIS) através da chave estrangeira "get_avaliador" presente na tabela "tag".
+
+DIAGRAMA ENTIDADE RELAÇÃO:
+
+	Temos relação apenas entre as entidades "tag" e "palestrantes". A relação que temos é que cada palestrante pode aplicar N tags, porém cada tag é aplicada por somente um palestrante.
+
+-|---------------|-						-|------------|-
+-|		 |-  1		    //////\\\\\\	     n	-|	      |-
+-| palestrantes	 |-  <<-------------   APLICA	------------>>  -|    tag     |-		
+-|		 |-		    \\\\\\//////		-|	      |-		
+-|---------------|-						-|------------|-
