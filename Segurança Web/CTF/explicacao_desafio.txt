@@ -1,0 +1,42 @@
+#PROCESSO SELETIVO GRIS - 2020
+#NOME: LEONARDO ANDRADE
+#TAG SEGURANÇA WEB: Criar seu próprio CTF
+
+Esse diretório contém todos os scripts e arquivos necessários para rodar o CTF que eu criei.
+O desafio é baseado na vulnerabilidade Path Traversal Injection,que é uma falha de segurança Web que permite 
+que um invasor leia arquivos arbitrários no servidor que está executando um aplicativo. 
+Isso pode incluir código e dados do aplicativo, 
+credenciais para sistemas de back-end e arquivos confidenciais do sistema operacional. 
+Em alguns casos, um invasor pode gravar em arquivos arbitrários no servidor, 
+permitindo modificar dados ou comportamento do aplicativo e, finalmente, assumir o controle total do servidor.
+
+Infelizmente eu não consegui concluir o que eu havia planejado a tempo, minha ideia inicial era fazer um
+path traversal mais elaborado, com um pouco mais de dificuldade, onde o jogador tentaria encontrar a flag no root
+ou até num histório log. Planejava criar uma imagem docker também, mas não consegui pegar tudo a tempo. 
+Bem, fiz o melhor que pude. Você poderá encontrar alguns erros, má prática nos scripts,
+isso se deve ao fato que nunca programei em php, e num mexi com html, fui entender o que era back e front-end 
+fazendo o desafio haha. Vamos a explicação do CTF e como jogar ele na sua máquina.
+
+Basicamente o que você precisará copiar será o todos os arquivos e pastas do diretório CTF no qual você está 
+agora lendo isto. Nele contém o script back-end (index.php) que irá dialogar com o server-side e organizar o 
+html. Temos também o front-end da página (home.php, blog.php,forum.php,sobre.php) que será responsável pela 
+visualização do conteúdo no client-side.
+
+Tendo feito o download de todo o conteúdo (aconselho criar um pasta para condensar tudo nela caso não consiga
+fazer o download da pasta CTF completa), vamos ao que precisa para o rodar o programa.
+
+--> Primeiro de tudo você irá precisar de um WebServer para upar o desafio, para isso utilizaremos
+o WebServer simples criado pelo Python, digite o seguinte no seu terminal:
+
+        sudo php -S 127.0.0.1:8080 -t .
+        //Esse comando criará um servidor localhost na porta 8080 que suporta php.
+
+--> Feito isso, você já o server para upar o CTF. Digite no seu navegador:
+
+        http://localhost:8080/diretorio-onde-esta-o-arquivo-CTF
+        //No meu caso eu guardei o arquivo CTF no meu diretório ps-gris, logo eu digito ...:8080/ps-gris
+        
+        Se tudo der certo, você já estará visualizando a página Home do desafio, 
+        junto com a explicação, agora é só tentar resolver :)
+
+
