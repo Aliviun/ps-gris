@@ -1,3 +1,5 @@
+<!--front-end do site, refere-se a resposta ao cliente quando o sobre é requisitado-->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
