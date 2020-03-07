@@ -1,4 +1,4 @@
-<!--front-end do site, refere-se a resposta ao cliente quando o fórum é requisitado-->
+<!--front-end do site, refere-se a resposta ao cliente quando o blog é requisitado-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
