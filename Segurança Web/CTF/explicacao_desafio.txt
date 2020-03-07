@@ -12,12 +12,12 @@ permitindo modificar dados ou comportamento do aplicativo e, finalmente, assumir
 
 Infelizmente eu não consegui concluir o que eu havia planejado a tempo, minha ideia inicial era fazer um
 path traversal mais elaborado, com um pouco mais de dificuldade, onde o jogador tentaria encontrar a flag no root
-ou até num histório log. Planejava criar uma imagem docker também, mas não consegui pegar tudo a tempo. 
+ou até num históriCo log. Planejava criar uma imagem docker também, mas não consegui pegar tudo a tempo. 
 Bem, fiz o melhor que pude. Você poderá encontrar alguns erros, má prática nos scripts,
-isso se deve ao fato que nunca programei em php, e num mexi com html, fui entender o que era back e front-end 
+isso se deve ao fato que nunca programei em php, e nunca mexi com html, fui entender o que era back e front-end 
 fazendo o desafio haha. Vamos a explicação do CTF e como jogar ele na sua máquina.
 
-Basicamente o que você precisará copiar será o todos os arquivos e pastas do diretório CTF no qual você está 
+Basicamente o que você precisará copiar todos os arquivos e pastas do diretório CTF no qual você está 
 agora lendo isto. Nele contém o script back-end (index.php) que irá dialogar com o server-side e organizar o 
 html. Temos também o front-end da página (home.php, blog.php,forum.php,sobre.php) que será responsável pela 
 visualização do conteúdo no client-side.
@@ -26,12 +26,12 @@ Tendo feito o download de todo o conteúdo (aconselho criar um pasta para conden
 fazer o download da pasta CTF completa), vamos ao que precisa para o rodar o programa.
 
 --> Primeiro de tudo você irá precisar de um WebServer para upar o desafio, para isso utilizaremos
-o WebServer simples criado pelo Python, digite o seguinte no seu terminal:
+o WebServer simples criado pelo Python, digite o seguinte comando no seu terminal:
 
         sudo php -S 127.0.0.1:8080 -t .
         //Esse comando criará um servidor localhost na porta 8080 que suporta php.
 
---> Feito isso, você já o server para upar o CTF. Digite no seu navegador:
+--> Feito isso, você já tem o server para upar o CTF. Digite no seu navegador:
 
         http://localhost:8080/diretorio-onde-esta-o-arquivo-CTF
         //No meu caso eu guardei o arquivo CTF no meu diretório ps-gris, logo eu digito ...:8080/ps-gris
